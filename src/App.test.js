@@ -22,6 +22,12 @@ describe("checking the counter module", () => {
     expect(incrementButton).toHaveLength(1);
   });
 
+  test("should render decrement button", () => {
+    const wrapper = setup();
+    const decrementButton = findByTestAttr(wrapper, "decrement-button");
+    expect(decrementButton).toHaveLength(1);
+  });
+
   test("should render count display", () => {
     const wrapper = setup();
     const countDisplay = findByTestAttr(wrapper, "counter-display");
@@ -44,5 +50,20 @@ describe("checking the counter module", () => {
     const countDisplay = findByTestAttr(wrapper, "counter-display").text();
 
     expect(countDisplay).toBe("1");
+  });
+
+  test("should decrement count on clicking button", () => {
+    const wrapper = setup();
+
+    const incrementButton = findByTestAttr(wrapper, "increment-button");
+
+    incrementButton.simulate("click");
+
+    const decrementButton = findByTestAttr(wrapper, "decrement-button");
+    decrementButton.simulate("click");
+
+    const countDisplay = findByTestAttr(wrapper, "counter-display").text();
+
+    expect(countDisplay).toBe("0");
   });
 });
