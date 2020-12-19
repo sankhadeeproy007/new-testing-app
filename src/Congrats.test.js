@@ -5,9 +5,14 @@ import { findByTestAttr } from './test/testutils';
 
 import Congrats from './Congrats';
 
+const defaultProps = { success: false };
+
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-const setup = (props = {}) => shallow(<Congrats {...props} />);
+const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<Congrats {...setupProps} />);
+};
 
 test('should render without error', () => {
   const wrapper = setup();
