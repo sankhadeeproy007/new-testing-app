@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,10 +17,18 @@ function App() {
     <div className="App" data-test="component-app">
       <h1>Testing react</h1>
       <h2 data-test="counter-display">{count}</h2>
-      <button onClick={incrementCounter} data-test="increment-button">
+      <button
+        type="button"
+        onClick={incrementCounter}
+        data-test="increment-button"
+      >
         Increment counter
       </button>
-      <button onClick={decrementCounter} data-test="decrement-button">
+      <button
+        type="button"
+        onClick={decrementCounter}
+        data-test="decrement-button"
+      >
         Decrement counter
       </button>
     </div>
