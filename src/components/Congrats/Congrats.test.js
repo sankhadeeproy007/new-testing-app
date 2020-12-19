@@ -1,9 +1,9 @@
 import { shallow } from 'enzyme';
 import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-import { findByTestAttr } from './test/testutils';
+import { findByTestAttr } from '../../test/testutils';
 
-import Congrats from './Congrats';
+import Congrats from '.';
 
 const defaultProps = { success: false };
 
