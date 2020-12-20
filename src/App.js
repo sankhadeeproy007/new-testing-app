@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import Congrats from './components/Congrats';
 import GuessedWords from './components/GuessedWords';
+import Input from './components/Input';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         Word app
       </div>
       <Congrats />
+      <Input />
       <GuessedWords
         guessedWords={[
           { guessedWord: 'train', letterMatchCount: 3 },
