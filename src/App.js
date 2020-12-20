@@ -20,7 +20,7 @@ function App() {
       >
         Word app
       </div>
-      <Congrats success />
+      <Congrats />
       <GuessedWords
         guessedWords={[
           { guessedWord: 'train', letterMatchCount: 3 },

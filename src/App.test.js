@@ -1,10 +1,10 @@
-import Enzyme, { shallow } from 'enzyme';
+import { shallow } from 'enzyme';
+
+import { findByTestAttr } from './test/testutils';
 
 import App from './App';
 
 const setup = () => shallow(<App />);
-
-const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test='${val}']`);
 
 describe('checking the counter module', () => {
   test('renders without error', () => {
