@@ -33,4 +33,30 @@ describe('Guessedwords component', () => {
       expect(instructionsComponent.text()).not.toHaveLength(0);
     });
   });
+  describe('If there are words guessed', () => {
+    let wrapper;
+    const guessedWords = [
+      { guessedWord: 'train', letterMatchCount: 3 },
+      { guessedWord: 'aglile', letterMatchCount: 1 },
+      { guessedWord: 'party', letterMatchCount: 5 },
+    ];
+    beforeEach(() => {
+      wrapper = setup({ guessedWords });
+    });
+
+    test('should render without error', () => {
+      const emptyComponent = findByTestAttr(wrapper, 'guessedwords-component');
+      expect(emptyComponent).toHaveLength(1);
+    });
+
+    test('should render guessed word section', () => {
+      const guessedWords = findByTestAttr(wrapper, 'guessedwords');
+      expect(guessedWords).toHaveLength(1);
+    });
+
+    test('should display correct number of guessed words', () => {
+      const guessedWordNodes = findByTestAttr(wrapper, 'guessedword');
+      expect(guessedWordNodes).toHaveLength(guessedWords.length);
+    });
+  });
 });
