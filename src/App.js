@@ -1,36 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import Congrats from './components/Congrats';
+import GuessedWords from './components/GuessedWords';
 
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const incrementCounter = () => {
-    setCount((prev) => prev + 1);
-  };
-
-  const decrementCounter = () => {
-    setCount((prev) => prev - 1);
-  };
-
   return (
     <div className="App" data-test="component-app">
-      <h1>Testing react</h1>
-      <h2 data-test="counter-display">{count}</h2>
-      <button
-        type="button"
-        onClick={incrementCounter}
-        data-test="increment-button"
-      >
-        Increment counter
-      </button>
-      <button
-        type="button"
-        onClick={decrementCounter}
-        data-test="decrement-button"
-      >
-        Decrement counter
-      </button>
+      <h1>Word app</h1>
+      <Congrats />
+      <GuessedWords guessedWords={[]} />
     </div>
   );
 }
